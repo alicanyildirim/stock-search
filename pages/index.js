@@ -1,64 +1,40 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-
+import TickerInput from '../components/ticker-input';
+import Typography from '@material-ui/core/Typography';
+import CodeIcon from '@material-ui/icons/Code';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Stock Search</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+        <Typography variant="h2" className={styles.title} style={{color: "#33691E", fontWeight: "500"}}>Stock Search</Typography>
+        
+        <Typography variant="h6" className={styles.description} style={{marginTop: "20px", marginBottom: "40px"}}>
+          Information about securities, fetched from &nbsp; 
+          <a href="https://www.alphavantage.co/documentation/#company-overview" target="_blank">Alpha Vantage API</a>
+          <br/>
+          Enter the ticker symbol of the stock you want to get information about.
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+        </Typography>
+         <TickerInput ></TickerInput>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
+        <Typography variant="body1">
+      This is a restricted free API with a limit of 5 API requests per minute and 500 requests per day. The page is built solely for educational purposes.
+      <section  style={{marginTop:"10px", display: "flex", flexDirection: "row", justifyContent: "center"}}>
+        <a href="https://www.linkedin.com/in/alicandev/" target="_blank" style={{marginRight: "10px"}}><CodeIcon/></a>
+        <a href="https://www.linkedin.com/in/alicandev/" target="_blank"><LinkedInIcon/></a>
+      </section>
+        </Typography>
       </footer>
     </div>
   )
