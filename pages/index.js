@@ -31,7 +31,7 @@ export default function Home() {
         <Typography variant="body1">
       This is a restricted free API with a limit of 5 API requests per minute and 500 requests per day. The page is built solely for educational purposes.
       <section  style={{marginTop:"10px", display: "flex", flexDirection: "row", justifyContent: "center"}}>
-        <a href="https://www.linkedin.com/in/alicandev/" target="_blank" style={{marginRight: "10px"}}><CodeIcon/></a>
+        <a href="https://github.com/alicanyildirim/stock-search" target="_blank" style={{marginRight: "10px"}}><CodeIcon/></a>
         <a href="https://www.linkedin.com/in/alicandev/" target="_blank"><LinkedInIcon/></a>
       </section>
         </Typography>
