@@ -21,6 +21,8 @@ export default function Home() {
           <a href="https://www.alphavantage.co/documentation/#company-overview" target="_blank">Alpha Vantage API</a>
           <br/>
           Enter the ticker symbol of the stock you want to get information about.
+          <br/>
+          Try <span style={{color: "red"}}>GME</span> for starters.
 
         </Typography>
          <TickerInput ></TickerInput>

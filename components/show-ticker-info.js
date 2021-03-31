@@ -31,7 +31,6 @@ const useStyles = makeStyles((theme) => ({
 export default function ShowTickerInfo(props) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
-
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
@@ -55,7 +54,11 @@ export default function ShowTickerInfo(props) {
       </Typography>
 
     );
-  } else {
+  } 
+  else if(props.ticker === "idle") {
+    return <></>
+  }
+  else {
     return (
       <div className={classes.root} style={{display: props.isLoading ? "none": "flex"}}>
         <Typography variant="h4" style={{textAlign: 'center', color: "#263238", marginBottom: "20px"}}>{props.ticker.Name}</Typography>

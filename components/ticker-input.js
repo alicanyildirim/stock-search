@@ -26,8 +26,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function TickerInput() {
   const classes = useStyles();
-  const [ticker,setTicker] = useState('IBM');
-  const [tickerInfo, setTickerInfo] = useState([]);
+  const [ticker,setTicker] = useState('');
+  const [tickerInfo, setTickerInfo] = useState('idle');
   const [disableClick, setDisableClick] = useState(false);
 
 
@@ -35,30 +35,29 @@ export default function TickerInput() {
     e.preventDefault();
     if (ticker) {
       setDisableClick(true);
-      console.log(ticker);
       setTicker(ticker);
       getTicker();
     } 
   };
   
   const getTicker = async () => {
-    const demo = 'https://www.alphavantage.co/query?function=OVERVIEW&symbol=IBM&apikey=demo'
-    const url = 'https://www.alphavantage.co/query?function=OVERVIEW&symbol=' + ticker +'&apikey=' + process.env.API_KEY;
-    const response = await fetch(ticker ? url : demo );
-    const tickerInfo = await response.json();
-    setTickerInfo(tickerInfo);
-    console.log(tickerInfo);
-    setDisableClick(false);
+    if(ticker != "") {
+      const url = 'https://www.alphavantage.co/query?function=OVERVIEW&symbol=' + ticker +'&apikey=' + process.env.API_KEY;
+      const response = await fetch(url);
+      const tickerInfo = await response.json();
+      console.log(tickerInfo);
+      setTickerInfo(tickerInfo);
+      setDisableClick(false);
+    }
   };
-  
   useEffect(() => {
     getTicker();
-  }, []);
+  }, []);  
 
   return (
     <>
     <form noValidate autoComplete="off" onSubmit={handleSubmit}>
-      <TextField id="outlined-basic" label="Ticker Symbol" variant="outlined" defaultValue="IBM" className={classes.input}
+      <TextField id="outlined-basic" label="Ticker Symbol" variant="outlined" className={classes.input}
         onChange={(e) => setTicker(e.target.value)}
       >
         {ticker}
