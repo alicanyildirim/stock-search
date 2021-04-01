@@ -16,11 +16,16 @@ const useStyles = makeStyles((theme) => ({
   },
   input: {
       margin: theme.spacing(1),
-      height: 72
+      height: 72,
+      width: 150
   },
   button: {
-      margin: theme.spacing(1),
-      height: 56
+      margin: theme.spacing(2),
+      maxWidth: "40px",
+      maxHeight: "40px",
+      minWidth: "40px",
+      minHeight: "40px",
+
   }
 }));
 
