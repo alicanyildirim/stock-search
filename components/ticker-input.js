@@ -66,7 +66,7 @@ export default function TickerInput() {
       <input type="text" placeholder="Ticker Symbol" className={classes.input} 
              onChange={(e) => setTicker(e.target.value)} value={ticker}></input>
       <Button variant="contained" color="primary" className={classes.button} 
-              type="submit" disabled={disableClick} id="submit" value="Submit">
+              type="submit" disabled={disableClick} id="submit" value="Submit" disableTouchRipple={true}>
         <SearchIcon></SearchIcon>
       </Button>
     </form>
