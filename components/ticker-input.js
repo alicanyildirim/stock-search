@@ -65,7 +65,8 @@ export default function TickerInput() {
     <form noValidate autoComplete="off" onSubmit={handleSubmit}>
       <input type="text" placeholder="Ticker Symbol" className={classes.input} 
              onChange={(e) => setTicker(e.target.value)} value={ticker}></input>
-      <Button variant="contained" color="primary" className={classes.button} type="submit" disabled={disableClick}>
+      <Button variant="contained" color="primary" className={classes.button} 
+              type="submit" disabled={disableClick} id="submit" value="Submit">
         <SearchIcon></SearchIcon>
       </Button>
     </form>
