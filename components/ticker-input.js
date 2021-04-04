@@ -15,16 +15,17 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   input: {
-      margin: theme.spacing(1),
-      height: 72,
-      width: 150
+      margin: theme.spacing(2),
+      height: 42,
+      width: 140,
+      fontSize: "20px",
   },
   button: {
-      margin: theme.spacing(2),
-      maxWidth: "40px",
-      maxHeight: "40px",
-      minWidth: "40px",
-      minHeight: "40px",
+      marginTop: "-6px",
+      maxWidth: "42px",
+      maxHeight: "42px",
+      minWidth: "42px",
+      minHeight: "42px",
 
   }
 }));
@@ -62,11 +63,8 @@ export default function TickerInput() {
   return (
     <>
     <form noValidate autoComplete="off" onSubmit={handleSubmit}>
-      <TextField id="outlined-basic" label="Ticker Symbol" className={classes.input}
-        onChange={(e) => setTicker(e.target.value)}
-        value={ticker}
-      >
-      </TextField>
+      <input type="text" placeholder="Ticker Symbol" className={classes.input} 
+             onChange={(e) => setTicker(e.target.value)} value={ticker}></input>
       <Button variant="contained" color="primary" className={classes.button} type="submit" disabled={disableClick}>
         <SearchIcon></SearchIcon>
       </Button>
