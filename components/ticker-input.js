@@ -64,8 +64,8 @@ export default function TickerInput() {
     <form noValidate autoComplete="off" onSubmit={handleSubmit}>
       <TextField id="outlined-basic" label="Ticker Symbol" className={classes.input}
         onChange={(e) => setTicker(e.target.value)}
+        value={ticker}
       >
-        {ticker}
       </TextField>
       <Button variant="contained" color="primary" className={classes.button} type="submit" disabled={disableClick}>
         <SearchIcon></SearchIcon>
