@@ -16,8 +16,8 @@ const useStyles = makeStyles((theme) => ({
   },
   input: {
       margin: theme.spacing(2),
-      height: 42,
-      width: 140,
+      height: "42px",
+      width: "140px",
       fontSize: "20px",
   },
   button: {
@@ -63,7 +63,7 @@ export default function TickerInput() {
 
   return (
     <>
-    <form noValidate autoComplete="off" onSubmit={handleSubmit}>
+    <form noValidate onSubmit={handleSubmit}>
       <TextField id="outlined-basic" type="text" label="Ticker Symbol" className={classes.input} name="TickerSymbol" autoFocus={true} variant="outlined"
              onChange={(e) => setTicker(e.target.value)} value={ticker}></TextField>
       <Button variant="contained" color="primary" className={classes.button} 
